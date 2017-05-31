@@ -19,3 +19,6 @@ group :development do
   gem 'web-console', '~> 2.0'
   gem 'spring'
 end
+
+# 追加したgem
+gem 'haml-rails'
