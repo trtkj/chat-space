@@ -1,1 +1,28 @@
 @import "./reset";
+
+#container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+#notification {
+  background-color: #38AEF0;
+  height: 30px;
+  /*display: none;*/
+}
+
+#wrapper {
+  display: flex;
+  flex: 1;
+
+}
+
+#main {
+  flex: 1;
+}
+
+#side {
+  width: 300px;
+  background: #ddd;
+}
