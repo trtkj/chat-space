@@ -1,0 +1,42 @@
+.side {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  color: $text-color-white;
+  &__header {
+    background-color: $secondary-color-dark;
+    height: $header-height;
+    padding: 0 $side-padding-horizontal;
+    line-height: $header-height;
+    .user {
+      &__name {
+        font-size: $font-l;
+        font-weight: bold;
+      }
+      &__option {
+        font-size: $font-xl;
+        line-height: $header-height;
+        margin-left: 10px;
+        float: right;
+        &:link, &:visited, &:hover, &:active {
+          color: $text-color-white;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+  &__body {
+    background-color: $secondary-color;
+    flex: 1;
+    .group {
+      padding: $side-padding-horizontal;
+      &__name {
+        font-size: $font-m;
+        margin-bottom: 5px;
+      }
+      &__text {
+        font-size: $font-xxs;
+      }
+    }
+  }
+}

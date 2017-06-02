@@ -1,0 +1,26 @@
+.main__footer {
+  background-color: $primary-color-dark;
+  padding: 20px $main-padding-horizontal;
+  .post {
+    display: flex;
+    position: relative;
+    &__text {
+      display:block;
+      height: 50px;
+      background-color: $primary-color-light;
+      flex: 1;
+      margin-right: 15px;
+      border-style: none;
+      padding: 0 10px;
+    }
+    &__image-icon {
+      position: absolute;
+      right: 125px;
+      font-size: $font-l;
+      line-height: 50px;
+    }
+    &__submit {
+      @include submit();
+    }
+  }
+}

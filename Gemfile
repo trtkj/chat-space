@@ -22,3 +22,4 @@ end
 
 # 追加したgem
 gem 'haml-rails'
+gem 'font-awesome-rails'
