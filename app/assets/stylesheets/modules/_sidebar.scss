@@ -10,9 +10,19 @@
   height: $header-height;
   padding: 0 $side-padding-horizontal;
   line-height: $header-height;
-  h2 {
+  span {
     font-size: $font-l;
     font-weight: bold;
+  }
+  a {
+    font-size: $font-xl;
+    line-height: $header-height;
+    margin-left: 10px;
+    float: right;
+    &:link, &:visited, &:hover, &:active {
+      color: $text-color-white;
+      text-decoration: none;
+    }
   }
 }
 

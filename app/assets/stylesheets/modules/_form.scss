@@ -3,17 +3,24 @@
   padding: 20px $main-padding-horizontal;
   form {
     display: flex;
+    position: relative;
   }
-  .post {
-    display:block;
-    height: 50px;
-    background-color: $primary-color-light;
-    flex: 1;
-    margin-right: 15px;
-    border-style: none;
-    padding: 0 10px;
-  }
-  .submit {
-    @include submit();
-  }
+    .post {
+      display:block;
+      height: 50px;
+      background-color: $primary-color-light;
+      flex: 1;
+      margin-right: 15px;
+      border-style: none;
+      padding: 0 10px;
+    }
+    .image-upload {
+      position: absolute;
+      right: 125px;
+      font-size: $font-l;
+      line-height: 50px;
+    }
+    .submit {
+      @include submit();
+    }
 }
