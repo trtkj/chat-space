@@ -1,0 +1,32 @@
+#side {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  color: $text-color-white;
+}
+
+#side__header {
+  background-color: $secondary-color-dark;
+  height: $header-height;
+  padding: 0 $side-padding-horizontal;
+  line-height: $header-height;
+  h2 {
+    font-size: $font-l;
+    font-weight: bold;
+  }
+}
+
+#side__body {
+  background-color: $secondary-color;
+  flex: 1;
+  li {
+    padding: $side-padding-horizontal;
+  }
+  h3 {
+    font-size: $font-m;
+    margin-bottom: 5px;
+  }
+  h4 {
+    font-size: $font-xxs;
+  }
+}

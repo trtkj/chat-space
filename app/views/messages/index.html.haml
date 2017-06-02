@@ -3,9 +3,9 @@
     チャットグループが作成されました。
   #wrapper
     #side
-      #side-top
+      #side__header
         %h2 tsuruta
-      #side-body
+      #side__body
         %ul
           %li
             %h3 仲良しグループ
@@ -16,32 +16,13 @@
           %li
             %h3 仲良しグループ
             %h4 おはよう
-          / %li
-          /   %h3 仲良しグループ
-          /   %h4 おはよう
-          / %li
-          /   %h3 仲良しグループ
-          /   %h4 おはよう
-          / %li
-          /   %h3 仲良しグループ
-          /   %h4 おはよう
-          / %li
-          /   %h3 仲良しグループ
-          /   %h4 おはよう
-          / %li
-          /   %h3 仲良しグループ
-          /   %h4 おはよう
-          / %li
-          /   %h3 仲良しグループ
-          /   %h4 おはよう
     #main
-      #main-top
+      #main__header
         #group-info
           %h1 仲良しグループ
           %span Members: tsuruta, tanaka, suzuki
-        %a(href="#" title="" target="_blank")
-          Edit
-      #main-body
+        %a(href="#" title="" target="_blank") Edit
+      #main__body
         %ul
           %li
             %span.name tanaka
@@ -55,35 +36,7 @@
             %span.name tanaka
             %span.date 2019/1/1 06:19:41
             %p message
-          / %li
-          /   %span.name tanaka
-          /   %span.date 2019/1/1 06:19:41
-          /   %p message
-          / %li
-          /   %span.name tanaka
-          /   %span.date 2019/1/1 06:19:41
-          /   %p message
-          / %li
-          /   %span.name tanaka
-          /   %span.date 2019/1/1 06:19:41
-          /   %p message
-          / %li
-          /   %span.name tanaka
-          /   %span.date 2019/1/1 06:19:41
-          /   %p message
-          / %li
-          /   %span.name tanaka
-          /   %span.date 2019/1/1 06:19:41
-          /   %p message
-          / %li
-          /   %span.name tanaka
-          /   %span.date 2019/1/1 06:19:41
-          /   %p message
-          / %li
-          /   %span.name tanaka
-          /   %span.date 2019/1/1 06:19:41
-          /   %p message
-      #input
+      #main_input
         %form
           %input.post(type="text" placeholder="type a message")
           %input.submit(type="submit" value="Send")

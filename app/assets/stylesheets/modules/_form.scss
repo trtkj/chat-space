@@ -1,0 +1,19 @@
+#main_input {
+  background-color: $primary-color-dark;
+  padding: 20px $main-padding-horizontal;
+  form {
+    display: flex;
+  }
+  .post {
+    display:block;
+    height: 50px;
+    background-color: $primary-color-light;
+    flex: 1;
+    margin-right: 15px;
+    border-style: none;
+    padding: 0 10px;
+  }
+  .submit {
+    @include submit();
+  }
+}

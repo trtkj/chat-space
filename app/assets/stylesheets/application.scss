@@ -1,4 +1,7 @@
+@import "config/variable";
+@import "mixin/*";
 @import "./reset";
+@import "modules/*";
 
 #container {
   min-height: 100vh;
@@ -6,146 +9,8 @@
   flex-direction: column;
 }
 
-#notification {
-  background-color: #38AEF0;
-  height: 30px;
-  display: block;
-  color: #FFFFFF;
-  text-align: center;
-  line-height: 30px;
-}
-
 #wrapper {
   display: flex;
   flex: 1;
 }
 
-#side {
-  width: 300px;
-  display: flex;
-  flex-direction: column;
-  color: #FFFFFF;
-}
-
-#side-top {
-  background-color: #253141;
-  height: 100px;
-  padding: 0 20px;
-  line-height: 100px;
-  h2 {
-    font-size: 16px;
-    font-weight: bold;
-  }
-}
-
-#side-body {
-  background-color: #2f3e51;
-  flex: 1;
-  li {
-    padding: 20px;
-  }
-  h3 {
-    font-size: 15px;
-    margin-bottom: 5px;
-  }
-  h4 {
-    font-size: 11px;
-  }
-}
-
-#main {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
-
-#main-top {
-  background-color: #FFFFFF;
-  height: 100px;
-  margin-left: 40px;
-  margin-right: 40px;
-  font-size: 12px;
-  color: #999999;
-  #group-info {
-    float: left;
-  }
-    h1 {
-      font-size: 20px;
-      color: #333333;
-      margin-top: 35px;
-      margin-bottom: 15px;
-      line-height: 20px;
-    }
-  a{
-    display:block;
-    height: 40px;
-    padding: 0 20px;
-    text-align:center;
-    line-height: 40px;
-    border:2px solid #38AEF0;
-    float:right;
-    text-decoration: none;
-    margin-top: 28px;
-  }
-  a:link { color:#38AEF0; text-decoration:none }
-  a:visited { color:#38AEF0; text-decoration:none }
-  a:hover { color:#38AEF0; text-decoration:none }
-  a:active { color:#38AEF0; text-decoration:none }
-}
-
-#main-body {
-  background-color: #FAFAFA;
-  flex: 1;
-  border-top: 1px solid #eeeeee;
-  ul {
-    margin-left: 40px;
-    margin-right: 40px;
-  }
-  li {
-    margin-top: 40px;
-  }
-    .name {
-      font-size: 16px;
-      font-weight: bold;
-      color: #434A54;
-    }
-    .date {
-      margin-left: 10px;
-      font-size: 12px;
-      color: #999999;
-    }
-    p {
-      margin-top: 10px;
-      font-size: 14px;
-      color: #434A54;
-    }
-}
-
-#input {
-  background-color: #DDDDDD;
-  padding: 20px 40px;
-  form {
-    display: flex;
-  }
-  .post {
-    display:block;
-    height: 50px;
-    background-color: #FFFFFF;
-    flex: 1;
-    margin-right: 15px;
-    border-style: none;
-    padding: 0 10px;
-  }
-  .submit {
-    display:block;
-    height: 50px;
-    width: 100px;
-    padding: 0 20px;
-    background-color: #38AEF0;
-    color: #FFFFFF;
-    text-align:center;
-    line-height: 40px;
-    text-decoration: none;
-    border-style: none;
-  }
-}
