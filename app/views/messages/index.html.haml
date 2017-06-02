@@ -2,23 +2,7 @@
   .notification
     チャットグループが作成されました。
   .wrapper
-    .side
-      .side__header
-        .user
-          %span.user__name tsuruta
-          %a.fa.fa-cog.user__option(href="#" title="")
-          %a.fa.fa-pencil-square-o.user__option(href="#" title="")
-      .side__body
-        %ul.groups
-          %li.group
-            %h3.group__name 仲良しグループ
-            %h4.group__text おはよう
-          %li.group
-            %h3.group__name 仲良しグループ
-            %h4.group__text おはよう
-          %li.group
-            %h3.group__name 仲良しグループ
-            %h4.group__text おはよう
+    = render :partial => "side"
     .main
       .main__header
         .group
