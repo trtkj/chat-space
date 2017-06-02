@@ -1,11 +1,10 @@
-#main_input {
+.main__footer {
   background-color: $primary-color-dark;
   padding: 20px $main-padding-horizontal;
-  form {
+  .post {
     display: flex;
     position: relative;
-  }
-    .post {
+    &__text {
       display:block;
       height: 50px;
       background-color: $primary-color-light;
@@ -14,13 +13,14 @@
       border-style: none;
       padding: 0 10px;
     }
-    .image-upload {
+    &__image-icon {
       position: absolute;
       right: 125px;
       font-size: $font-l;
       line-height: 50px;
     }
-    .submit {
+    &__submit {
       @include submit();
     }
+  }
 }

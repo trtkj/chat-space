@@ -3,15 +3,3 @@
 @import "font-awesome";
 @import "./reset";
 @import "modules/*";
-
-#container {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
-#wrapper {
-  display: flex;
-  flex: 1;
-}
-

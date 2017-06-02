@@ -1,46 +1,48 @@
-#container
-  #notification
+.container
+  .notification
     チャットグループが作成されました。
-  #wrapper
-    #side
-      #side__header
-        %span tsuruta
-        %a.fa.fa-cog.icon(href="#" title="")
-        %a.fa.fa-pencil-square-o.icon(href="#" title="")
-      #side__body
-        %ul
-          %li
-            %h3 仲良しグループ
-            %h4 おはよう
-          %li
-            %h3 仲良しグループ
-            %h4 おはよう
-          %li
-            %h3 仲良しグループ
-            %h4 おはよう
-    #main
-      #main__header
-        #group-info
-          %h1 仲良しグループ
-          %span Members: tsuruta, tanaka, suzuki
-        %a(href="#" title="") Edit
-      #main__body
-        %ul
-          %li
-            %span.name tanaka
-            %span.date 2019/1/1 06:19:41
-            %p message
-          %li
-            %span.name tanaka
-            %span.date 2019/1/1 06:19:41
-            %p message
-          %li
-            %span.name tanaka
-            %span.date 2019/1/1 06:19:41
-            %p message
-      #main_input
-        %form
-          %input.post(type="text" placeholder="type a message")
-          %input#upload(type="file" style="display:none")
-          %i.fa.fa-picture-o.image-upload
-          %input.submit(type="submit" value="Send")
+  .wrapper
+    .side
+      .side__header
+        .user
+          %span.user__name tsuruta
+          %a.fa.fa-cog.user__option(href="#" title="")
+          %a.fa.fa-pencil-square-o.user__option(href="#" title="")
+      .side__body
+        %ul.groups
+          %li.group
+            %h3.group__name 仲良しグループ
+            %h4.group__text おはよう
+          %li.group
+            %h3.group__name 仲良しグループ
+            %h4.group__text おはよう
+          %li.group
+            %h3.group__name 仲良しグループ
+            %h4.group__text おはよう
+    .main
+      .main__header
+        .group
+          %h1.group__name 仲良しグループ
+          %span.group__members Members: tsuruta, tanaka, suzuki
+        %a.button(href="#" title="") Edit
+      .main__body
+        %ul.messages
+          %li.message
+            %span.message__name tanaka
+            %span.message__date 2019/1/1 06:19:41
+            %p.message__text message
+          %li.message
+            %span.message__name tanaka
+            %span.message__date 2019/1/1 06:19:41
+            %p.message__text message
+          %li.message
+            %span.message__name tanaka
+            %span.message__date 2019/1/1 06:19:41
+            %p.message__text message
+      .main__footer
+        %form.post
+          %input.post__text(type="text" placeholder="type a message")
+          %label
+            %input.post__image(type="file" style="display:none")
+            %i.fa.fa-picture-o.post__image-icon
+          %input.post__submit(type="submit" value="Send")
