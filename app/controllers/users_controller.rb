@@ -6,8 +6,11 @@ class UsersController < ApplicationController
   end
 
   def update
-    @user.update(user_params)
-    redirect_to(root_url)
+    if @user.update(user_params)
+      redirect_to(root_url)
+    else
+      render "edit"
+    end
   end
 
   private
