@@ -7,16 +7,16 @@ class UsersController < ApplicationController
 
   def update
     if @user.update(user_params)
-      redirect_to(root_url)
+      redirect_to :root
     else
-      render "edit"
+      render :edit
     end
   end
 
   private
   def correct_user
     @user = User.find(params[:id])
-    redirect_to(root_url) unless @user == current_user
+    redirect_to :root unless @user == current_user
   end
 
   def user_params
