@@ -2,7 +2,7 @@
   .side__header
     .user
       %span.user__name tsuruta
-      %a.fa.fa-cog.user__option(href="#" title="")
+      = link_to "", edit_user_path(current_user.id), method: :GET, class: ["fa", "fa-cog", "user__option"]
       %a.fa.fa-pencil-square-o.user__option(href="#" title="")
   .side__body
     %ul.groups
