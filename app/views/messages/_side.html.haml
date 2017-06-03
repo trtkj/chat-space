@@ -2,8 +2,7 @@
   .side__header
     .user
       %span.user__name tsuruta
-      / ユーザー情報編集ページへのリンク。if以降は非ログインユーザーに対するリダイレクト処理が実装できるまで仮置き
-      = link_to "", edit_user_path(current_user), class: ["fa", "fa-cog", "user__option"] if user_signed_in?
+      = link_to "", edit_user_path(current_user), class: ["fa", "fa-cog", "user__option"]
       %a.fa.fa-pencil-square-o.user__option(href="#" title="")
   .side__body
     %ul.groups
