@@ -1,6 +1,7 @@
 .container
-  .notification
-    チャットグループが作成されました。
+  - if notice
+    .notification
+      #{notice}
   .wrapper
     = render :partial => "side"
     .main
