@@ -3,7 +3,7 @@
     .user
       %span.user__name tsuruta
       = link_to "", edit_user_path(current_user), class: ["fa", "fa-cog", "user__option"]
-      %a.fa.fa-pencil-square-o.user__option(href="#" title="")
+      = link_to "", new_group_path, class: ["fa", "fa-pencil-square-o", "user__option"]
   .side__body
     %ul.groups
       %li.group
