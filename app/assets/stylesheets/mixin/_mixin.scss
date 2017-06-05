@@ -10,3 +10,11 @@
   text-decoration: none;
   border-style: none;
 }
+
+@mixin notification() {
+  height: 30px;
+  display: block;
+  color: $text-color-white;
+  text-align: center;
+  line-height: 30px;
+}
