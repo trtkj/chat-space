@@ -24,3 +24,5 @@ end
 gem 'haml-rails'
 gem 'font-awesome-rails'
 gem 'devise'
+gem 'mini_magick'
+gem 'carrierwave'
