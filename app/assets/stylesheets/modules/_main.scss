@@ -1,4 +1,5 @@
 .main {
+  height: 100vh;
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -39,6 +40,7 @@
   &__body {
     background-color: $primary-color;
     flex: 1;
+    overflow: scroll;
     border-top: 1px solid $primary-color-dark;
     .messages {
       margin-left: $main-padding-horizontal;
