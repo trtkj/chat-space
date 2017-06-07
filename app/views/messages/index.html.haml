@@ -3,23 +3,24 @@
   .main
     .main__header
       .group
-        %h1.group__name 仲良しグループ
-        %span.group__members Members: tsuruta, tanaka, suzuki
-      %a.button(href="#" title="") Edit
+        %h1.group__name #{@group.name}
+        %span.group__members
+          Members: 
+          - @group.users.each_with_index do |user, i|
+            - if i == @group.users.length - 1
+              = user.name
+            -else
+              = user.name + ", "
+      = link_to "Edit", edit_group_path(@group), class: "button"
     .main__body
       %ul.messages
-        %li.message
-          %span.message__name tanaka
-          %span.message__date 2019/1/1 06:19:41
-          %p.message__text message
-        %li.message
-          %span.message__name tanaka
-          %span.message__date 2019/1/1 06:19:41
-          %p.message__text message
-        %li.message
-          %span.message__name tanaka
-          %span.message__date 2019/1/1 06:19:41
-          %p.message__text message
+        - @group.messages.each do |message|
+          %li.message
+            %span.message__name #{message.user.name}
+            %span.message__date #{message.updated_at}
+            %p.message__text #{message.body}
+            - if image_tag "#{message.image}"
+              = image_tag "#{message.image}"
     .main__footer
       = form_for [@group, @message], html: { class: "post" } do |f|
         = f.text_field :body, placeholder: "type a message", class: "post__text"
