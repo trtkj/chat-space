@@ -1,7 +1,7 @@
 class MessagesController < ApplicationController
   def index
-    @message = Message.new
     @group = Group.find(params[:group_id])
+    @message = Message.new
   end
 
   def create
@@ -9,6 +9,7 @@ class MessagesController < ApplicationController
     if @message.save
       redirect_to group_messages_path, notice: "メッセージを投稿しました"
     else
+      @group = Group.find(params[:group_id])
       flash.now[:alert] = "メッセージを入力してください"
       render :index
     end
