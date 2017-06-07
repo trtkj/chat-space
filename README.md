@@ -34,7 +34,7 @@
 ## messages table
 | column | type | option |
 | ---- | ---- | ---- |
-| body | text | null: false |
+| body | text |  |
 | image | string |  |
 | group_id | integer | null: false |
 | user_id | integer | null: false |
