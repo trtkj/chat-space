@@ -2,7 +2,7 @@ class MessagesController < ApplicationController
   def index
     @message = Message.new
     # groupのidは仮置き
-    @group = Group.find(1)
+    @group = Group.find(params[:group_id])
   end
 
   def create
