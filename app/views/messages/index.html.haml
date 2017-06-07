@@ -1,6 +1,7 @@
 .wrapper
   = render partial: "side"
   .main
+  - if params[:id]
     .main__header
       .group
         %h1.group__name 仲良しグループ
