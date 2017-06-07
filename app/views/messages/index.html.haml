@@ -21,7 +21,7 @@
           %span.message__date 2019/1/1 06:19:41
           %p.message__text message
     .main__footer
-      = form_for @message, url: group_messages_path, html: { class: "post" } do |f|
+      = form_for [@group, @message], html: { class: "post" } do |f|
         = f.text_field :body, placeholder: "type a message", class: "post__text"
         %label
           = f.file_field :image, style: "display:none"
