@@ -14,7 +14,7 @@
       = link_to "Edit", edit_group_path(@group), class: "button"
     .main__body
       %ul.messages
-        - @group.messages.each do |message|
+        - @group.messages.includes(:user).each do |message|
           %li.message
             %span.message__name #{message.user.name}
             %span.message__date #{message.updated_at}
