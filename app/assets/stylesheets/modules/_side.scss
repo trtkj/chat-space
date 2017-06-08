@@ -26,8 +26,17 @@
     }
   }
   &__body {
-    background-color: $secondary-color;
     flex: 1;
+    background-color: $secondary-color;
+    .groups__link {
+      &:link, &:visited, &:hover, &:active {
+        color: $text-color-white;
+        text-decoration: none;
+      }
+      &:hover .group{
+        background-color: $secondary-color-light;
+      }
+    }
     .group {
       padding: $side-padding-horizontal;
       &__name {
