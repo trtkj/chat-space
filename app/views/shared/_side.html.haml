@@ -7,6 +7,9 @@
   .side__body
     %ul.groups
       - current_user.groups.each do |group|
-        %li.group
-          %h3.group__name #{group.name}
-          %h4.group__text おはよう
+        = link_to group_messages_path(group), class: "groups__link" do
+          %li.group
+            %h3.group__name #{group.name}
+            %h4.group__text
+              - if group.messages.count > 0
+                #{group.messages.last.body}
