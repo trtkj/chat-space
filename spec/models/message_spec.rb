@@ -25,6 +25,9 @@ describe Message do
     # メッセージを保存できない場合
     ## メッセージも画像も無いと保存できない
     it "is invalid without both body and image" do
+        message = build(:message, body: nil, image: nil)
+        message.valid?
+        expect(message.errors[:body][0]).to include("を入力してください")
     end
 
     ## group_idが無いと保存できない
