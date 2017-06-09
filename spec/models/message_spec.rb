@@ -2,9 +2,7 @@ require "rails_helper"
 
 describe Message do
   describe "#create" do
-    let(:message) do
-        create(:message)
-    end
+    let(:message){create(:message)}
 
     # メッセージを保存できる場合
     ## メッセージがあれば画像がなくても保存できる
