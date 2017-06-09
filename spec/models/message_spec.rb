@@ -35,6 +35,9 @@ describe Message do
 
     ## group_idが無いと保存できない
     it "is invalide without group_id" do
+        message.group_id = nil
+        message.valid?
+        expect(message.errors[:group_id][0]).to include("を入力してください")
     end
 
     ## user_idが無いと保存できない
