@@ -6,19 +6,19 @@ describe Message do
     # メッセージを保存できる場合
     ## メッセージがあれば画像がなくても保存できる
     it "is valid with body" do
-        message = build(:message, body: "イルカかわいい", image: nil)
+        message = create(:message, image: nil)
         expect(message).to be_valid
     end
 
     ## 画像があればメッセージがなくても保存できる
     it "is valid with image" do
-        message = build(:message, body: "", image: "iruka.jpg")
+        message = create(:message, body: nil)
         expect(message).to be_valid
     end
 
     ## メッセージと画像があれば保存できる
     it "is valid with body and image" do
-        message = build(:message, body: "イルカかわいい", image: "iruka.jpg")
+        message = create(:message)
         expect(message).to be_valid
     end
 
