@@ -18,6 +18,8 @@ describe Message do
 
     ## メッセージと画像があれば保存できる
     it "is valid with body and image" do
+        message = build(:message, body: "イルカかわいい", image: "iruka.jpg")
+        expect(message).to be_valid
     end
 
     # メッセージを保存できない場合
