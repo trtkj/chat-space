@@ -13,6 +13,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 group :development, :test do
   gem 'byebug'
+  gem 'rspec-rails'
+  gem 'factory_girl_rails', "~> 4.4.1"
 end
 
 group :development do
@@ -20,7 +22,10 @@ group :development do
   gem 'spring'
 end
 
-# 追加したgem
+group :test do
+  gem 'faker'
+end
+
 gem 'haml-rails'
 gem 'font-awesome-rails'
 gem 'devise'
