@@ -42,6 +42,9 @@ describe Message do
 
     ## user_idが無いと保存できない
     it "is invalid without user_id" do
+        message.user_id = nil
+        message.valid?
+        expect(message.errors[:user_id][0]).to include("を入力してください")
     end
   end
 end
