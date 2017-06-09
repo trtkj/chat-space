@@ -10,8 +10,9 @@ describe Message do
         expect(message).to be_valid
     end
 
-    ## 画像があれば保存できる
+    ## 画像があればメッセージがなくても保存できる
     it "is valid with image" do
+        message = build(:message, image: "iruka.jpg", body: nil)
     end
 
     ## メッセージと画像があれば保存できる
