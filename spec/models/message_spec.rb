@@ -4,8 +4,10 @@ describe Message do
   describe "#create" do
 
     # メッセージを保存できる場合
-    ## メッセージがあれば保存できる
+    ## メッセージがあれば画像がなくても保存できる
     it "is valid with body" do
+        message = build(:message, body: "イルカかわいい", image: nil)
+        expect(message).to be_valid
     end
 
     ## 画像があれば保存できる
@@ -28,5 +30,5 @@ describe Message do
     ## user_idが無いと保存できない
     it "is invalid without user_id" do
     end
-
+  end
 end
