@@ -22,7 +22,10 @@ group :development do
   gem 'spring'
 end
 
-# 追加したgem
+group :test do
+  gem 'faker'
+end
+
 gem 'haml-rails'
 gem 'font-awesome-rails'
 gem 'devise'
