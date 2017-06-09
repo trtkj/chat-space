@@ -6,6 +6,8 @@ describe Message do
     # メッセージを保存できる場合
     ## メッセージがあれば保存できる
     it "is valid with body" do
+      message = build(:message, body: "イルカかわいい")
+      expect(message).to be_valid
     end
 
     ## 画像があれば保存できる
@@ -29,4 +31,5 @@ describe Message do
     it "is invalid without user_id" do
     end
 
+  end
 end
