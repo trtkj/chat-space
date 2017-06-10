@@ -2,10 +2,11 @@ require 'rails_helper'
 
 
 describe MessagesController, type: :controller do
+  let(:group){create(:group)}
+
   # ログインユーザー
   describe "sign_in user access" do
     let(:user){create(:user)}
-    let(:group){create(:group)}
 
     before do
       login_user user
@@ -78,22 +79,23 @@ describe MessagesController, type: :controller do
     end
   end
 
-  # # ゲストユーザー
-  # describe "guest access" do
+  # ゲストユーザー
+  describe "guest access" do
+    describe "GET #index" do
 
-  #   describe "GET #index" do
+      # サインイン画面にリダイレクトさせること
+      it "redirects to sign_in template" do
+        get :index, params: { group_id: group }
+        expect(response).to redirect_to new_user_session_path
+      end
+    end
 
-  #     # サインイン画面にリダイレクトさせること
-  #     it "redirects to sign_in template" do
-  #     end
-  #   end
+    # describe "POST #create" do
 
-  #   describe "POST #create" do
-
-  #     # サインイン画面にリダイレクトさせること
-  #     it "redirects to sign_in template" do
-  #     end
-  #   end
-  # end
+    #   # サインイン画面にリダイレクトさせること
+    #   it "redirects to sign_in template" do
+    #   end
+    # end
+  end
 end
 
