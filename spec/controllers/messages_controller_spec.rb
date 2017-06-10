@@ -68,9 +68,12 @@ describe MessagesController, type: :controller do
           end.not_to change(Message, :count)
         end
 
-        # # :index テンプレートを表示すること
-        # it "renders the :index template" do
-        # end
+        # :index テンプレートを表示すること
+        it "renders the :index template" do
+          post :create, params: { group_id: group.id, message: attributes_for(:invalid_message) }
+          expect(response).to render_template :index
+
+        end
       end
     end
   end
