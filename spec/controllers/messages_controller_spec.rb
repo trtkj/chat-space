@@ -90,12 +90,14 @@ describe MessagesController, type: :controller do
       end
     end
 
-    # describe "POST #create" do
+    describe "POST #create" do
 
-    #   # サインイン画面にリダイレクトさせること
-    #   it "redirects to sign_in template" do
-    #   end
-    # end
+      # サインイン画面にリダイレクトさせること
+      it "redirects to sign_in template" do
+        post :create, params: { group_id: group.id, message: attributes_for(:message) }
+        expect(response).to redirect_to new_user_session_path
+      end
+    end
   end
 end
 
