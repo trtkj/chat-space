@@ -43,7 +43,6 @@ describe MessagesController, type: :controller do
 
       # 送信成功時
       context "with valid attributes" do
-        let(:message){create(:message, group_id: group.id, user_id: user.id)}
 
         # 新しいメッセージをDBに保存すること
         it "saves the new message in the database" do
