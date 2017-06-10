@@ -58,17 +58,20 @@ describe MessagesController, type: :controller do
         end
       end
 
-      # # 送信失敗時
-      # context "with invalid attributes" do
+      # 送信失敗時
+      context "with invalid attributes" do
 
-      #   # メッセージをDBに保存しないこと
-      #   it "doesn't save the message" do
-      #   end
+        # メッセージをDBに保存しないこと
+        it "doesn't save the message" do
+          expect do
+            post :create, params: { group_id: group.id, message: attributes_for(:invalid_message) }
+          end.not_to change(Message, :count)
+        end
 
-      #   # :index テンプレートを表示すること
-      #   it "renders the :index template" do
-      #   end
-      # end
+        # # :index テンプレートを表示すること
+        # it "renders the :index template" do
+        # end
+      end
     end
   end
 
