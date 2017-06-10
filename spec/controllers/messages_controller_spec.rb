@@ -4,15 +4,16 @@ require 'rails_helper'
 describe MessagesController, type: :controller do
   # ログインユーザー
   describe "sign_in user access" do
-    let(:message){create(:message)}
-    let(:user){User.find(message.user_id)}
-    let(:group){Group.find(message.group_id)}
+    let(:user){create(:user)}
+    let(:group){create(:group)}
 
     before do
       login_user user
     end
 
     describe "GET #index" do
+      let(:message){Message.new(group_id: group.id, user_id: user.id)}
+
       # @groupに要求されたグループが割り当てられること
       it "assigns the requested group to @group" do
         get :index, params: {group_id: group}
