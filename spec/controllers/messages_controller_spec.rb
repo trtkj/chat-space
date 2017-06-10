@@ -16,57 +16,55 @@ describe MessagesController, type: :controller do
 
       # @groupに要求されたグループが割り当てられること
       it "assigns the requested group to @group" do
-        get :index, params: {group_id: group}
+        get :index, params: { group_id: group }
         expect(assigns(:group)).to eq group
       end
 
       # @messageに新しいメッセージが割り当てられること
       it "assigns a new message to @message" do
-        get :index, params: {group_id: group}
+        get :index, params: { group_id: group }
         expect(assigns(:message)).to be_a_new(Message)
       end
 
       # :indexテンプレートを表示すること
       it "renders the :index template" do
-        get :index, params: {group_id: group}
+        get :index, params: { group_id: group }
         expect(response).to render_template :index
       end
     end
 
-    # describe "POST #create" do
+    describe "POST #create" do
 
-    #   # @groupに要求されたグループが割り当てられること
-    #   it "assigns the requested group to @group" do
-    #   end
+      # @groupに要求されたグループが割り当てられること
+      it "assigns the requested group to @group" do
+        post :create, params: { group_id: group.id, message: attributes_for(:message) }
+        expect(assigns(:group)).to eq group
+      end
 
-    #   # @messageに要求されたメッセージが割り当てられること
-    #   it "assigns the requested message to @message" do
-    #   end
+      # # 送信成功時
+      # context "with valid attributes" do
 
-    #   # 送信成功時
-    #   context "with valid attributes" do
+      #   # 新しいメッセージをDBに保存すること
+      #   it "saves the new message in the database" do
+      #   end
 
-    #     # 新しいメッセージをDBに保存すること
-    #     it "saves the new message in the database" do
-    #     end
+      #   # :indexテンプレートを表示すること
+      #   it "renders the :index template" do
+      #   end
+      # end
 
-    #     # :indexテンプレートを表示すること
-    #     it "renders the :index template" do
-    #     end
-    #   end
+      # # 送信失敗時
+      # context "with invalid attributes" do
 
-    #   # 送信失敗時
-    #   context "with invalid attributes" do
+      #   # メッセージをDBに保存しないこと
+      #   it "doesn't save the message" do
+      #   end
 
-    #     # メッセージをDBに保存しないこと
-    #     it "doesn't save the message" do
-    #     end
-
-    #     # :index テンプレートを表示すること
-    #     it "renders the :index template" do
-    #     end
-    #   end
-    # end
+      #   # :index テンプレートを表示すること
+      #   it "renders the :index template" do
+      #   end
+      # end
+    end
   end
 
   # # ゲストユーザー
