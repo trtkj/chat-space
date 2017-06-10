@@ -1,12 +1,11 @@
 require 'rails_helper'
 
-
 describe MessagesController, type: :controller do
-  let(:group){create(:group)}
+  let(:group){ create(:group) }
 
   # ログインユーザー
-  describe "sign_in user access" do
-    let(:user){create(:user)}
+  context "sign_in user access" do
+    let(:user){ create(:user) }
 
     before do
       login_user user
@@ -80,7 +79,7 @@ describe MessagesController, type: :controller do
   end
 
   # ゲストユーザー
-  describe "guest access" do
+  context "guest access" do
     describe "GET #index" do
 
       # サインイン画面にリダイレクトさせること
