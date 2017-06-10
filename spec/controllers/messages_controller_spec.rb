@@ -25,9 +25,11 @@ describe MessagesController, type: :controller do
         expect(assigns(:message)).to be_a_new(Message)
       end
 
-      # # :indexテンプレートを表示すること
-      # it "renders the :index template" do
-      # end
+      # :indexテンプレートを表示すること
+      it "renders the :index template" do
+        get :index, params: {group_id: group}
+        expect(response).to render_template :index
+      end
     end
 
     # describe "POST #create" do
