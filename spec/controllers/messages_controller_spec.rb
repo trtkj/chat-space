@@ -52,9 +52,11 @@ describe MessagesController, type: :controller do
           end.to change(Message, :count).by(1)
         end
 
-        # # :indexテンプレートを表示すること
-        # it "renders the :index template" do
-        # end
+        # :indexテンプレートを表示すること
+        it "redirects to message#index" do
+          post :create, params: { group_id: group.id, message: attributes_for(:message) }
+          expect(response).to redirect_to group_messages_path
+        end
       end
 
       # # 送信失敗時
