@@ -41,17 +41,21 @@ describe MessagesController, type: :controller do
         expect(assigns(:group)).to eq group
       end
 
-      # # 送信成功時
-      # context "with valid attributes" do
+      # 送信成功時
+      context "with valid attributes" do
+        let(:message){create(:message, group_id: group.id, user_id: user.id)}
 
-      #   # 新しいメッセージをDBに保存すること
-      #   it "saves the new message in the database" do
-      #   end
+        # 新しいメッセージをDBに保存すること
+        it "saves the new message in the database" do
+          expect do
+            post :create, params: { group_id: group.id, message: attributes_for(:message) }
+          end.to change(Message, :count).by(1)
+        end
 
-      #   # :indexテンプレートを表示すること
-      #   it "renders the :index template" do
-      #   end
-      # end
+        # # :indexテンプレートを表示すること
+        # it "renders the :index template" do
+        # end
+      end
 
       # # 送信失敗時
       # context "with invalid attributes" do
