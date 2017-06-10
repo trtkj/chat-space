@@ -13,31 +13,33 @@ describe MessagesController, type: :controller do
 
     describe "GET #index" do
       let(:message){Message.new(group_id: group.id, user_id: user.id)}
+      before :each do
+        get :index, params: { group_id: group }
+      end
 
       # @groupに要求されたグループが割り当てられること
       it "assigns the requested group to @group" do
-        get :index, params: { group_id: group }
         expect(assigns(:group)).to eq group
       end
 
       # @messageに新しいメッセージが割り当てられること
       it "assigns a new message to @message" do
-        get :index, params: { group_id: group }
         expect(assigns(:message)).to be_a_new(Message)
       end
 
       # :indexテンプレートを表示すること
       it "renders the :index template" do
-        get :index, params: { group_id: group }
         expect(response).to render_template :index
       end
     end
 
     describe "POST #create" do
+      before :each do
+        post :create, params: { group_id: group.id, message: attributes_for(:message) }
+      end
 
       # @groupに要求されたグループが割り当てられること
       it "assigns the requested group to @group" do
-        post :create, params: { group_id: group.id, message: attributes_for(:message) }
         expect(assigns(:group)).to eq group
       end
 
@@ -53,7 +55,6 @@ describe MessagesController, type: :controller do
 
         # :indexテンプレートを表示すること
         it "redirects to message#index" do
-          post :create, params: { group_id: group.id, message: attributes_for(:message) }
           expect(response).to redirect_to group_messages_path
         end
       end
