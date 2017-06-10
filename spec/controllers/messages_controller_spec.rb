@@ -19,9 +19,11 @@ describe MessagesController, type: :controller do
         expect(assigns(:group)).to eq group
       end
 
-      # # @messageに新しいメッセージが割り当てられること
-      # it "assigns a new message to @message" do
-      # end
+      # @messageに新しいメッセージが割り当てられること
+      it "assigns a new message to @message" do
+        get :index, params: {group_id: group}
+        expect(assigns(:message)).to be_a_new(Message)
+      end
 
       # # :indexテンプレートを表示すること
       # it "renders the :index template" do
