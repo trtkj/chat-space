@@ -13,9 +13,11 @@ describe MessagesController, type: :controller do
     end
 
     describe "GET #index" do
-      # # @groupに要求されたグループが割り当てられること
-      # it "assigns the requested group to @group" do
-      # end
+      # @groupに要求されたグループが割り当てられること
+      it "assigns the requested group to @group" do
+        get :index, params: {group_id: group}
+        expect(assigns(:group)).to eq group
+      end
 
       # # @messageに新しいメッセージが割り当てられること
       # it "assigns a new message to @message" do
