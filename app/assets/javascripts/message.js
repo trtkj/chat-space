@@ -2,9 +2,15 @@ $(function(){
   function buidlHTML(data){
     var span_name = $('<span class="message__name">').append(data.user_name);
     var span_date = $('<span class="message__date">').append(data.updated_at);
-    var p_text = $('<p class="message__text">').append(data.body);
-    var img = $('<img>').attr('src', data.image);
-    var html = $('<li class="message">').append(span_name).append(span_date).append(p_text).append(img);
+    var html = $('<li class="message">').append(span_name, span_date);
+    if (data.body){
+      var p_text = $('<p class="message__text">').append(data.body);
+      html.append(p_text);
+    }
+    if (data.image){
+      var img = $('<img>').attr('src', data.image);
+      html.append(img);
+    }
     return html;
   }
 
