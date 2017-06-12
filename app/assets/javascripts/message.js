@@ -1,13 +1,15 @@
 $(function(){
   $(".post").on("submit", function(e){
     e.preventDefault();
-    var textField = $(".post__text");
-    var imageField = $(".post__image");
-    text = $(".post__text").val();
-    image = null;
-    if(imageField[0].files.length){
-      image = imageField[0].files[0].name;
-    }
-    console.log(text + " " + image);
+    var url = $(".post").attr("action");
+    var fd = new FormData($(this).get(0));
+    $.ajax({
+      type: "POST",
+      url: url,
+      data: fd,
+      processData: false,
+      contentType: false,
+      dataType: "json"
+    });
   });
 });
