@@ -25,9 +25,9 @@ $(function(){
       contentType: false,
       dataType: "json"
     }).done(function(data){
-      console.log(data);
       var html = buidlHTML(data);
       $(".messages").append(html);
+      $(".main__body").animate({scrollTop: $(".main__body")[0].scrollHeight});
       form_reset();
     })
     .fail(function(){
