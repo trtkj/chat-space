@@ -25,6 +25,6 @@
       = form_for [@group, @message], html: { class: "post" } do |f|
         = f.text_field :body, placeholder: "type a message", class: "post__text"
         %label
-          = f.file_field :image, style: "display:none"
+          = f.file_field :image, style: "display:none", class: "post__image"
           %i.fa.fa-picture-o.post__image-icon
         = f.submit "Send", class: "post__submit"
