@@ -13,7 +13,7 @@ $(function(){
     $(".post__submit").attr('disabled', false);
   }
 
-  $(".post").on("submit", function(e){
+  $(".post").submit(function(e){
     e.preventDefault();
     var url = $(".post").attr("action");
     var fd = new FormData($(this).get(0));
@@ -24,10 +24,11 @@ $(function(){
       processData: false,
       contentType: false,
       dataType: "json"
-    }).done(function(data){
+    })
+    .done(function(data){
       var html = buidlHTML(data);
       $(".messages").append(html);
-      $(".main__body").animate({scrollTop: $(".main__body")[0].scrollHeight});
+      $(".main__body").animate({ scrollTop: $(".main__body")[0].scrollHeight });
       form_reset();
     })
     .fail(function(){
