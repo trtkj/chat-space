@@ -8,6 +8,11 @@ $(function(){
     return html;
   }
 
+  function form_reset(){
+    $(".post")[0].reset();
+    $(".post__submit").attr('disabled', false);
+  }
+
   $(".post").on("submit", function(e){
     e.preventDefault();
     var url = $(".post").attr("action");
@@ -23,8 +28,11 @@ $(function(){
       console.log(data);
       var html = buidlHTML(data);
       $(".messages").append(html);
+      form_reset();
     })
     .fail(function(){
+      form_reset();
+      alert("送信に失敗しました");
     });
   });
 });
