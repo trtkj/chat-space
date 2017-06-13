@@ -12,8 +12,10 @@
         %label.chat-group-form__label{for: "user_search"} チャットメンバーを追加
       .chat-group-form__field--right#user-search
         %input.chat-group-form__input#user-search__input{type: "text", placeholder: "追加したいユーザー名を入力してください"}
-    .chat-group-form__search.clearfix
-      .user-search-result
+    .chat-group-form__field.clearfix
+      .chat-group-form__field--left
+        = f.label :user_search, "チャットメンバー", class: "chat-group-form__label"
+      .chat-group-form__field--right#user-search-result
     .chat-group-form__field.clearfix
       .chat-group-form__field--left
       .chat-group-form__field--right
