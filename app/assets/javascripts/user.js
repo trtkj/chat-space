@@ -49,4 +49,8 @@ $(function(){
     var html = addUserHTML(user_id, user_name);
     $("#user-search-result").append(html);
   });
+
+  $(document).on("click", ".chat-group-user__btn--remove", function(){
+    $(this).parent().remove();
+  });
 });
