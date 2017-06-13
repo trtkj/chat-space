@@ -2,6 +2,13 @@ class UsersController < ApplicationController
   # 本人以外はeditアクションとupdateアクションを実行できないようにする
   before_action :correct_user, only: [:edit, :update]
 
+  def index
+    @users = User.where('name LIKE(?)', "%#{params[:content]}%")
+    respond_to do |format|
+      format.json
+    end
+  end
+
   def edit
   end
 
