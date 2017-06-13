@@ -14,6 +14,15 @@ $(function(){
     return html;
   }
 
+  function messagesHTML(messages){
+    var html = $('<ul class="messages">');
+    for(var i=0; i < messages.length; i++){
+      var messageHtml = buidlHTML(messages[i]);
+      html.append(messageHtml);
+    }
+    return html;
+  }
+
   function form_reset(){
     $(".post")[0].reset();
     $(".post__submit").attr('disabled', false);
@@ -42,4 +51,22 @@ $(function(){
       alert("送信に失敗しました");
     });
   });
+
+  // 画面の自動更新
+  setInterval(function(){
+    var url = location.href;
+    $.ajax({
+      type: "GET",
+      url: url,
+      dataType: "json"
+    })
+    .done(function(messages){
+      var html = messagesHTML(messages);
+      $(".messages").remove();
+      $(".main__body").append(html);
+    })
+    .fail(function(){
+      alert("メッセージ取得の際にエラーが発生しました");
+    });
+  },5000);
 });
