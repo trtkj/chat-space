@@ -27,5 +27,9 @@ $(function(){
       var html = buildHTML(results);
       $("#user-search").append(html);
     })
+    .fail(function(){
+      form_reset();
+      alert("ユーザー検索に失敗しました");
+    });
   });
 });
