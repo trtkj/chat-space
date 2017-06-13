@@ -14,6 +14,15 @@ $(function(){
     return html;
   }
 
+  function messagesHTML(messages){
+    var html = $('<ul class="messages">');
+    for(var i=0; i < messages.length; i++){
+      var messageHtml = buidlHTML(messages[i]);
+      html.append(messageHtml);
+    }
+    return html;
+  }
+
   function form_reset(){
     $(".post")[0].reset();
     $(".post__submit").attr('disabled', false);
@@ -51,8 +60,10 @@ $(function(){
       url: url,
       dataType: "json"
     })
-    .done(function(){
-
+    .done(function(messages){
+      var html = messagesHTML(messages);
+      $(".messages").remove();
+      $(".main__body").append(html);
     })
     .fail(function(){
       alert("メッセージ取得の際にエラーが発生しました");
