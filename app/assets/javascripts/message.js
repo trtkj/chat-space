@@ -42,4 +42,20 @@ $(function(){
       alert("送信に失敗しました");
     });
   });
+
+  // 画面の自動更新
+  setInterval(function(){
+    var url = location.href;
+    $.ajax({
+      type: "GET",
+      url: url,
+      dataType: "json"
+    })
+    .done(function(){
+
+    })
+    .fail(function(){
+      alert("メッセージ取得の際にエラーが発生しました");
+    });
+  },5000);
 });
