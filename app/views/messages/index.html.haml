@@ -1,3 +1,4 @@
+= javascript_include_tag 'reload'
 .wrapper
   = render partial: "/shared/side"
   .main
@@ -5,7 +6,7 @@
       .group
         %h1.group__name #{@group.name}
         %span.group__members
-          Members: 
+          Members:
           - @group.users.each_with_index do |user, i|
             - if i == @group.users.length - 1
               = user.name
@@ -16,10 +17,13 @@
       %ul.messages
         - @group.messages.includes(:user).each do |message|
           %li.message
-            %span.message__name #{message.user.name}
-            %span.message__date #{message.updated_at}
-            %p.message__text #{message.body}
-            - if image_tag "#{message.image}"
+            %span.message__name<>
+              #{message.user.name}
+            %span.message__date<
+              #{message.updated_at}
+            - if message.body.present?
+              %p.message__text #{message.body}
+            - if message.image.present?
               = image_tag "#{message.image}"
     .main__footer
       = form_for [@group, @message], html: { class: "post" } do |f|
