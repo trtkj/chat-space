@@ -24,7 +24,6 @@ $(function(){
 
   $("#user-search__input").on("keyup", function() {
     var input = $("#user-search__input").val();
-    console.log(input);
     var url = "/users"
     $.ajax({
       type: "GET",
