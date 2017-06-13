@@ -10,6 +10,10 @@ $(function(){
     return html;
   }
 
+  function clearList(){
+    $("#candidates").remove();
+  }
+
   function addUserHTML(user_id, user_name){
     var html = $("<div class='chat-group-user clearfix js-chat-member' id='chat-group-user-8'>");
     var input_html = $("<input name='group[user_ids][]' type='hidden'>").attr("value", user_id);
@@ -18,7 +22,7 @@ $(function(){
     return html.append(input_html, p_html, a_html)
   }
 
-  $(".chat-group-form__input").on("keyup", function() {
+  $("#user-search__input").on("keyup", function() {
     var input = $("#user-search__input").val();
     console.log(input);
     var url = "/users"
@@ -31,7 +35,7 @@ $(function(){
       dataType: "json"
     })
     .done(function(results){
-      $("#candidates").remove();
+      clearList();
       var html = resultHTML(results);
       $("#user-search").append(html);
     })
@@ -42,7 +46,7 @@ $(function(){
   });
 
   $(document).on("click", ".chat-group-user__btn--add", function(){
-    $("#candidates").remove();
+    clearList();
     $("#user-search__input").val("");
     var user_id = $(this).attr("data-user-id");
     var user_name = $(this).attr("data-user-name");
